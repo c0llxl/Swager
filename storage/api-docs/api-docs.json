@@ -1,0 +1,72 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "description": "API Documentation for Mahasiswa",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/mahasiswa": {
+            "get": {
+                "tags": [
+                    "Mahasiswa"
+                ],
+                "summary": "Dapatkan daftar semua mahasiswa",
+                "description": "Mengembalikan daftar semua mahasiswa",
+                "operationId": "getMahasiswa",
+                "responses": {
+                    "200": {
+                        "description": "Daftar mahasiswa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Mahasiswa"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Mahasiswa": {
+                "title": "Mahasiswa",
+                "description": "Model Mahasiswa",
+                "properties": {
+                    "id": {
+                        "description": "ID mahasiswa",
+                        "type": "integer"
+                    },
+                    "nama": {
+                        "description": "Nama mahasiswa",
+                        "type": "string"
+                    },
+                    "nim": {
+                        "description": "Nomor Induk Mahasiswa",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email mahasiswa",
+                        "type": "string"
+                    },
+                    "jurusan": {
+                        "description": "Jurusan mahasiswa",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Mahasiswa",
+            "description": "Mahasiswa"
+        }
+    ]
+}
