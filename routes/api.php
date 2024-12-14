@@ -23,6 +23,8 @@ Route::prefix('mahasiswa')->group(function () {
     Route::get('/', [MahasiswaController::class, 'index']);
     Route::post('/', [MahasiswaController::class, 'store']);
     Route::get('/{id}', [MahasiswaController::class, 'show']);
+    Route::put('/{id}', [MahasiswaController::class, 'update']);
+    Route::delete('/{id}', [MahasiswaController::class, 'destroy']);
 });
 
 
